@@ -1,0 +1,13 @@
+.sites-runtime/
+node_modules/
+data/
+.env
+*.sqlite*
+server/assets.generated.mjs
+dist/
+
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+.secrets/

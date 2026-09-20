@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tajski-poker",
+  "main": "server/password-worker.mjs",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "vars": {
+    "PUBLIC_ORIGIN": "https://tajski-poker.rafal-klodos-tajski-poker.workers.dev"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tajski-poker",
+      "database_id": "5d45b93c-a545-43ab-b246-be610c485511",
+      "migrations_dir": "drizzle"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "0 4 * * *"
+    ]
+  }
+}
